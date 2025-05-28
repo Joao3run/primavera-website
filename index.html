@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Primavera ES | Engenharia de Software</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/ico/favicon-16x16.png">
+    <link rel="manifest" href="assets/ico/site.webmanifest">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
+        <ol tabindex="-1"
+            class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol>
+    </div>
+    <div class="min-h-screen">
+        <section
+                class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#6319c3] via-[#004cf2] to-[#6319c3] overflow-hidden">
+            <div class="absolute inset-0 opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-br from-[#004cf2]/20 to-[#6319c3]/20"></div>
+                <div class="absolute inset-0"
+                     style="background-image: radial-gradient(circle at 25px 25px, rgba(251, 165, 54, 0.1) 2px, transparent 0px); background-size: 50px 50px;"></div>
+            </div>
+            <div class="container mx-auto px-6 text-center z-10">
+                <div class="max-w-4xl mx-auto">
+                    <div class="mb-8 flex justify-center"><img src="assets/images/logo.svg" alt="Primavera"
+                                                               class="h-32 w-auto"></div>
+                    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">Soluções <span
+                            class="bg-gradient-to-r from-[#fba536] to-[#ff5362] bg-clip-text text-transparent">Tecnológicas</span>
+                        Inovadoras</h1>
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed animate-fade-in">Desenvolvimento de
+                        software sob demanda, aplicações mobile e web, consultoria especializada em TI para empresas que
+                        buscam evolução digital.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in">
+                        <button
+                                onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })"
+                                class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-11 rounded-md bg-gradient-to-r from-[#004cf2] to-[#6319c3] hover:from-[#004cf2]/90 hover:to-[#6319c3]/90 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                            Conheça Nossos Serviços
+                        </button>
+                        <button
+                                onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+                                class="inline-flex cursor-pointer bg-white items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-background h-11 rounded-md border-2 border-[#fba536] text-[#fba536] hover:bg-[#fba536] hover:text-white px-8 py-4 text-lg font-semibold transition-all duration-300">
+                            Fale Conosco
+                        </button>
+                    </div>
+                    <div class="text-center"><p class="text-gray-400 mb-4">Mais de uma década de experiência</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="lucide lucide-arrow-down mx-auto w-6 h-6 text-gray-400 animate-bounce">
+                            <path d="M12 5v14"></path>
+                            <path d="m19 12-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute top-20 left-10 w-20 h-20 bg-[#004cf2] rounded-full opacity-20 animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-16 h-16 bg-[#ff5362] rounded-full opacity-20 animate-pulse delay-75"></div>
+            <div class="absolute top-1/2 left-20 w-12 h-12 bg-[#fba536] rounded-full opacity-20 animate-pulse delay-150"></div>
+        </section>
+        <section id="services" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Nossos
+                    <span class="bg-gradient-to-r from-[#004cf2] to-[#6319c3] bg-clip-text text-transparent">Serviços</span>
+                </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Oferecemos soluções completas em tecnologia para
+                        impulsionar o crescimento do seu negócio</p></div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="rounded-lg bg-card text-card-foreground hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#004cf2] to-[#6319c3] rounded-lg flex items-center justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-code w-6 h-6 text-white">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="tracking-tight text-xl font-semibold text-gray-900">Desenvolvimento de Software
+                                sob Demanda</h3></div>
+                        <div class="p-6 pt-0"><p class="text-sm text-gray-600 leading-relaxed">Criação de soluções
+                            personalizadas para atender às necessidades específicas de cada cliente, com foco em
+                            qualidade e performance.</p></div>
+                    </div>
+                    <div class="rounded-lg bg-card text-card-foreground hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#004cf2] to-[#6319c3] rounded-lg flex items-center justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-smartphone w-6 h-6 text-white">
+                                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                                    <path d="M12 18h.01"></path>
+                                </svg>
+                            </div>
+                            <h3 class="tracking-tight text-xl font-semibold text-gray-900">Aplicativos Mobile</h3></div>
+                        <div class="p-6 pt-0"><p class="text-sm text-gray-600 leading-relaxed">Desenvolvimento para iOS,
+                            Android e multiplataforma usando Java, Flutter, React Native e Cordova.</p></div>
+                    </div>
+                    <div class="rounded-lg bg-card text-card-foreground hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#004cf2] to-[#6319c3] rounded-lg flex items-center justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-globe w-6 h-6 text-white">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                                    <path d="M2 12h20"></path>
+                                </svg>
+                            </div>
+                            <h3 class="tracking-tight text-xl font-semibold text-gray-900">Aplicações Web</h3></div>
+                        <div class="p-6 pt-0"><p class="text-sm text-gray-600 leading-relaxed">Sites, portais e soluções
+                            web corporativas com foco em desempenho e experiência do usuário.</p></div>
+                    </div>
+                    <div class="rounded-lg bg-card text-card-foreground hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#004cf2] to-[#6319c3] rounded-lg flex items-center justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-users w-6 h-6 text-white">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <h3 class="tracking-tight text-xl font-semibold text-gray-900">Outsourcing e Alocação</h3>
+                        </div>
+                        <div class="p-6 pt-0"><p class="text-sm text-gray-600 leading-relaxed">Profissionais
+                            qualificados para integrar equipes de desenvolvimento conforme a demanda dos projetos.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-lg bg-card text-card-foreground hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#004cf2] to-[#6319c3] rounded-lg flex items-center justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-lightbulb w-6 h-6 text-white">
+                                    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
+                                    <path d="M9 18h6"></path>
+                                    <path d="M10 22h4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="tracking-tight text-xl font-semibold text-gray-900">Consultoria
+                                Especializada</h3></div>
+                        <div class="p-6 pt-0"><p class="text-sm text-gray-600 leading-relaxed">Apoio estratégico na
+                            gestão de projetos de TI, desde análise de negócios até implementação.</p></div>
+                    </div>
+                    <div class="rounded-lg bg-card text-card-foreground hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#004cf2] to-[#6319c3] rounded-lg flex items-center justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-palette w-6 h-6 text-white">
+                                    <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                                    <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                                    <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                                    <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+                                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="tracking-tight text-xl font-semibold text-gray-900">UX/UI Design</h3></div>
+                        <div class="p-6 pt-0"><p class="text-sm text-gray-600 leading-relaxed">Interfaces intuitivas e
+                            centradas no usuário para melhorar a experiência e usabilidade.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6"><span
+                        class="bg-gradient-to-r from-[#004cf2] to-[#6319c3] bg-clip-text text-transparent">Tecnologias</span>
+                    Utilizadas</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Empregamos uma variedade de tecnologias modernas
+                        e robustas em nossos projetos</p></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
+                        <div class="w-16 h-16 rounded-lg bg-gradient-to-r from-[#004cf2] to-[#6319c3] flex items-center justify-center mb-6 mx-auto">
+                            <div class="w-8 h-8 bg-white rounded opacity-80"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Front-end</h3>
+                        <ul class="space-y-2">
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                JavaScript
+                            </li>
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                React
+                            </li>
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                Angular
+                            </li>
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                Vue
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
+                        <div class="w-16 h-16 rounded-lg bg-gradient-to-r from-[#fba536] to-[#ff5362] flex items-center justify-center mb-6 mx-auto">
+                            <div class="w-8 h-8 bg-white rounded opacity-80"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Back-end</h3>
+                        <ul class="space-y-2">
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                Java
+                            </li>
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                Node.js
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
+                        <div class="w-16 h-16 rounded-lg bg-gradient-to-r from-[#6319c3] to-[#004cf2] flex items-center justify-center mb-6 mx-auto">
+                            <div class="w-8 h-8 bg-white rounded opacity-80"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Mobile</h3>
+                        <ul class="space-y-2">
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                Java (Android)
+                            </li>
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                iOS
+                            </li>
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                Flutter
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
+                        <div class="w-16 h-16 rounded-lg bg-gradient-to-r from-[#ff5362] to-[#fba536] flex items-center justify-center mb-6 mx-auto">
+                            <div class="w-8 h-8 bg-white rounded opacity-80"></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Bancos de Dados</h3>
+                        <ul class="space-y-2">
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                Oracle
+                            </li>
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                SQL Server
+                            </li>
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                PostgreSQL
+                            </li>
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                MySQL
+                            </li>
+                            <li class="text-gray-600 text-center py-1 px-3 bg-gray-50 rounded-lg hover:bg-[#fba536]/10 transition-colors">
+                                Firebird
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 bg-gradient-to-br from-[#6319c3] via-[#004cf2] to-[#6319c3]">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div><h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Nossos <span
+                            class="bg-gradient-to-r from-[#fba536] to-[#ff5362] bg-clip-text text-transparent">Diferenciais</span>
+                    </h2>
+                        <div class="space-y-6 text-gray-300"><p class="text-lg leading-relaxed">Destacamo-nos por nossa
+                            ampla experiência no setor, com mais de uma década de atuação e milhares de projetos
+                            desenvolvidos com sucesso.</p>
+                            <p class="text-lg leading-relaxed">Nossa equipe multidisciplinar é composta por engenheiros,
+                                designers e especialistas em TI, todos comprometidos com altos padrões de entrega e
+                                atenção às tendências tecnológicas mais recentes.</p>
+                            <p class="text-lg leading-relaxed">Sediados em Pato Branco, Paraná, atendemos clientes em
+                                todo o Brasil, oferecendo soluções personalizadas que impulsionam o crescimento e a
+                                transformação digital dos negócios.</p></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="text-center bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 border border-[#fba536]/30">
+                            <div class="text-3xl md:text-4xl font-bold text-[#fba536] mb-2">10+</div>
+                            <div class="text-gray-300 text-sm md:text-base">Anos de Experiência</div>
+                        </div>
+                        <div class="text-center bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 border border-[#fba536]/30">
+                            <div class="text-3xl md:text-4xl font-bold text-[#fba536] mb-2">1000+</div>
+                            <div class="text-gray-300 text-sm md:text-base">Projetos Desenvolvidos</div>
+                        </div>
+                        <div class="text-center bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 border border-[#fba536]/30">
+                            <div class="text-3xl md:text-4xl font-bold text-[#fba536] mb-2">50+</div>
+                            <div class="text-gray-300 text-sm md:text-base">Clientes Atendidos</div>
+                        </div>
+                        <div class="text-center bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 border border-[#fba536]/30">
+                            <div class="text-3xl md:text-4xl font-bold text-[#fba536] mb-2">24/7</div>
+                            <div class="text-gray-300 text-sm md:text-base">Suporte Disponível</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Vamos Conversar sobre seu
+                        <span class="bg-gradient-to-r from-[#004cf2] to-[#6319c3] bg-clip-text text-transparent">Projeto</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                        Entre em contato conosco e descubra como podemos transformar suas ideias em soluções
+                        tecnológicas inovadoras. Estamos prontos para discutir seu próximo projeto!
+                    </p>
+                </div>
+                <div id="contact" class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
+                    <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Solicite um Orçamento</h3>
+                            <form class="space-y-6" action="https://formsubmit.co/contato@primaveraes.com.br" method="POST">
+                                <input type="hidden" name="_subject" value="Novo contato do site!">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-gray-700 font-medium block mb-1" for="name">Nome Completo
+                                        *</label>
+                                    <input type="text"
+                                           class="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-[#004cf2] focus:ring-[#004cf2]"
+                                           id="name" name="name" required placeholder="Seu nome completo">
+                                </div>
+                                <div>
+                                    <label class="text-gray-700 font-medium block mb-1" for="email">E-mail *</label>
+                                    <input type="email"
+                                           class="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-[#004cf2] focus:ring-[#004cf2]"
+                                           id="email" name="email" required placeholder="seu@email.com">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-gray-700 font-medium block mb-1" for="phone">Telefone</label>
+                                    <input type="tel"
+                                           class="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-[#004cf2] focus:ring-[#004cf2]"
+                                           id="phone" name="phone" placeholder="(00) 00000-0000">
+                                </div>
+                                <div>
+                                    <label class="text-gray-700 font-medium block mb-1" for="company">Empresa</label>
+                                    <input type="text"
+                                           class="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-[#004cf2] focus:ring-[#004cf2]"
+                                           id="company" name="company" placeholder="Nome da sua empresa">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="text-gray-700 font-medium block mb-1" for="project">Tipo de Projeto
+                                    *</label>
+                                <input type="text"
+                                       class="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-[#004cf2] focus:ring-[#004cf2]"
+                                       id="project" name="project" required
+                                       placeholder="Ex: Aplicativo mobile, Sistema web, Consultoria...">
+                            </div>
+
+                            <div>
+                                <label class="text-gray-700 font-medium block mb-1" for="message">Descrição do Projeto
+                                    *</label>
+                                <textarea
+                                        class="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-[#004cf2] focus:ring-[#004cf2] resize-none min-h-[120px]"
+                                        id="message" name="message" required
+                                        placeholder="Conte-nos mais sobre seu projeto, objetivos e expectativas..."></textarea>
+                            </div>
+
+                            <button id="submit-button" type="submit"
+                                    class="w-full bg-gradient-to-r from-[#004cf2] to-[#6319c3] hover:from-[#004cf2]/90 hover:to-[#6319c3]/90 text-white py-4 text-lg font-semibold rounded-md shadow-lg hover:shadow-xl transition-all duration-300">
+                                Enviar Solicitação
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Informações de Contato -->
+                    <div class="space-y-8">
+                        <div class="bg-gradient-to-br from-[#004cf2] to-[#6319c3] rounded-2xl p-8 text-white">
+                            <h3 class="text-2xl font-bold mb-6">Informações de Contato</h3>
+                            <div class="space-y-6">
+                                <!-- Localização -->
+                                <div class="flex items-start space-x-4">
+                                    <div class="bg-white/20 p-3 rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                                            <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-lg">Localização</h4>
+                                        <p class="text-white/90">Pato Branco, Paraná - Brasil
+                                    </div>
+                                </div>
+
+                                <!-- E-mail -->
+                                <div class="flex items-start space-x-4">
+                                    <div class="bg-white/20 p-3 rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-lg">E-mail</h4>
+                                        <p class="text-white/90">contato@primaveraes.com.br</p>
+                                    </div>
+                                </div>
+
+<!--                                &lt;!&ndash; Telefone &ndash;&gt;-->
+<!--                                <div class="flex items-start space-x-4">-->
+<!--                                    <div class="bg-white/20 p-3 rounded-lg">-->
+<!--                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"-->
+<!--                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"-->
+<!--                                             stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">-->
+<!--                                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>-->
+<!--                                        </svg>-->
+<!--                                    </div>-->
+<!--                                    <div>-->
+<!--                                        <h4 class="font-semibold text-lg">Telefone</h4>-->
+<!--                                        <p class="text-white/90">(46) 3220-0000</p>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+                                <!-- Horário -->
+                                <div class="flex items-start space-x-4">
+                                    <div class="bg-white/20 p-3 rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12 6 12 12 16 14"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-lg">Horário de Atendimento</h4>
+                                        <p class="text-white/90">Segunda à Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Benefícios -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-gradient-to-br from-[#fba536]/10 to-[#ff5362]/10 p-6 rounded-xl border border-[#fba536]/20">
+                                <div class="text-3xl mb-4">⚡</div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">Resposta Rápida</h4>
+                                <p class="text-gray-600">Retornamos seu contato em até 24 horas</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-[#6319c3]/10 to-[#004cf2]/10 p-6 rounded-xl border border-[#6319c3]/20">
+                                <div class="text-3xl mb-4">💼</div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">Consultoria Gratuita</h4>
+                                <p class="text-gray-600">Primeira consulta sem custo para seu projeto</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="mt-20 border-t border-gray-200 pt-12">
+                <div class="container mx-auto px-6">
+                    <div class="text-center">
+                        <p class="text-gray-600">© 2025 Primavera ES - Especialistas em Soluções Tecnológicas | Pato
+                            Branco, Paraná</p>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById("contact");
+    const button = document.getElementById("submit-button");
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        // Salva conteúdo original do botão
+        const originalText = button.innerHTML;
+
+        // Ativa loading
+        button.disabled = true;
+        button.innerHTML = `
+      <svg class="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+      </svg>
+      Enviando...
+    `;
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/seu@email.com", {
+                method: "POST",
+                body: formData
+            });
+
+            if (response.ok) {
+                showToast("Formulário enviado com sucesso!");
+                form.reset();
+            } else {
+                showToast("Erro ao enviar o formulário. Tente novamente.");
+            }
+        } catch (error) {
+            showToast("Erro de rede. Verifique sua conexão.");
+        } finally {
+            button.disabled = false;
+            button.innerHTML = originalText;
+        }
+    });
+
+    function showToast(message) {
+        const toast = document.createElement("div");
+        toast.textContent = message;
+        toast.className = "fixed bottom-4 right-4 bg-black text-white px-4 py-2 rounded shadow-lg animate-fade-in-out";
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+    }
+</script>
+
+
+</body>
+</html>
